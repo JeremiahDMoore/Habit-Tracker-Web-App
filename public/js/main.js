@@ -1,4 +1,5 @@
 const deleteBtn = document.querySelectorAll('.del')
+const plusOne = document.querySelectorAll('.plusOne')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
 
@@ -6,7 +7,7 @@ Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteTodo)
 })
 
-Array.from(todoItem).forEach((el)=>{
+Array.from(plusOne).forEach((el)=>{
     el.addEventListener('click', markComplete)
 })
 
@@ -21,7 +22,7 @@ async function deleteTodo(){
             method: 'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'todoIdFromJSFile': todoId,
             })
         })
         const data = await response.json()
@@ -32,24 +33,26 @@ async function deleteTodo(){
     }
 }
 
-async function markComplete(){
+function markComplete(){
     const todoId = this.parentNode.dataset.id
+    // const streak = Number(this.body.streak)
+    // console.log(streak)
+    console.log(todoId)
     try{
-        const response = await fetch('todos/markComplete', {
+        const response = fetch('todos/markComplete', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'todoIdFromJSFile': todoId                
             })
         })
-        const data = await response.json()
-        console.log(data)
+        // const data = response.json()
+        // console.log(data)
         location.reload()
     }catch(err){
         console.log(err)
     }
 }
-
 async function markIncomplete(){
     const todoId = this.parentNode.dataset.id
     try{
