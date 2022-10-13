@@ -1,31 +1,34 @@
 # Habit Tracker Web App
 
-A Simple Habit Tracker Web App built with Node, Express and MongoDB. Designed to be simple and easy to use for everyday engagements. Consistency is key to building habits! 
+A Simple Habit Tracker Web App built with Node, Express and MongoDB. Designed to be simple and easy to use for everyday engagements. Consistency is key to building habits!      
+
 This app was created as part of a 100 hours MVP project. 100 hours are given to complete an MVP of a concept and then design and build the application.
-# Objectives
+## Objectives
 
 - Get you started on the right track to forming good habits
 ---
 
-# Who is this for? 
+## Who is this for? 
 
 - Anyone who wants to form good habits by tracking their progress
 
 ---
 
-# Packages/Dependencies used 
+## Packages/Dependencies used 
 
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
+```
+bcrypt connect-mongo dotenv ejs express express-flash express-session mongodb mongoose morgan nodemon passport passport-local validator
+```
 
 ---
 
-# Install all the dependencies or node packages used for development via Terminal
+## Install all the dependencies or node packages used for development via Terminal
 
 `npm install` 
 
 ---
 
-# Things to add
+### Things to add
 
 - Create a `.env` file and add the following as `key: value` 
   - PORT: 2122 (can be any port example: 3000) 
