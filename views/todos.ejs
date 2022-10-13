@@ -13,9 +13,9 @@
 <body>
     <span class="titleBar">
     <% if (left <= 1 ){ %>
-        <h1 class="title"><%= user.userName %> is tracking <%= left %> habit</h1>    
+        <h3 class="title"><%= user.userName %> is tracking <%= left %> habit</h3>    
         <%  } else { %> 
-        <h1 class="title"><%= user.userName %> is tracking <%= left %> habits</h1>
+        <h3 class="title"><%= user.userName %> is tracking <%= left %> habits</h3>
         <% } %>
         <a href="/logout" class="link">Logout</a>
     </span>

@@ -39,14 +39,14 @@ function markComplete(){
     // console.log(streak)
     console.log(todoId)
     try{
-        const response = fetch('todos/markComplete', {
+        fetch('todos/markComplete', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
                 'todoIdFromJSFile': todoId                
             })
         })
-        // const data = response.json()
+        // const data = await response.json()
         // console.log(data)
         location.reload()
     }catch(err){
