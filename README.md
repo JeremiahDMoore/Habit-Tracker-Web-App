@@ -1,22 +1,15 @@
-# Introduction
+# Habit Tracker Web App
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
-
----
-
-> Be sure to add that lovely star 😀 and fork it for your own copy
-
----
-
+A Simple Habit Tracker Web App built with Node, Express and MongoDB. Designed to be simple and easy to use for everyday engagements. Consistency is key to building habits! 
+This app was created as part of a 100 hours MVP project. 100 hours are given to complete an MVP of a concept and then design and build the application.
 # Objectives
 
-- It's a beginner level app created to understand how MVC concept and logins are added
-
+- Get you started on the right track to forming good habits
 ---
 
 # Who is this for? 
 
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
+- Anyone who wants to form good habits by tracking their progress
 
 ---
 
@@ -35,10 +28,7 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 # Things to add
 
 - Create a `.env` file and add the following as `key: value` 
-  - PORT: 2121 (can be any port example: 3000) 
+  - PORT: 2122 (can be any port example: 3000) 
   - DB_STRING: `your database URI` 
  ---
  
- Have fun testing and improving it! 😎
-
-
