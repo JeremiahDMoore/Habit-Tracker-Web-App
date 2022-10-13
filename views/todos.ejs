@@ -5,37 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Habit Tracker</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
 <body>
-    <h1>Todos</h1>
+    <span class="titleBar">
+    <% if (left <= 1 ){ %>
+        <h1 class="title"><%= user.userName %> is tracking <%= left %> habit</h1>    
+        <%  } else { %> 
+        <h1 class="title"><%= user.userName %> is tracking <%= left %> habits</h1>
+        <% } %>
+        <a href="/logout" class="link">Logout</a>
+    </span>
     <ul>
+        <% var i = 0 %>
     <% todos.forEach( el => { %>
+        <% i += 1 %>
             <li class='todoItem rapper' data-id='<%=el._id%>'>
-                <span class="goal"><%= el.todo %></span><br>
+                <span class="goal"><%= el.todo %> for <%= el.totaldays %> days in a row</span>
                 <span class="motive"><%= el.motivation %></span>
-                <span class="motive"><%= el.startDate %></span>                
-                <span class='addLike'><%= el.streak %></span>
-                <span id="add" class='fa fa-plus-circle plusOne'></span>
-                <span id="delete" class='fa fa-trash del'></span> 
+                <span class="setDate"><%= el.startdate.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) %></span>
+                <% if (el.streak >= el.totaldays) { %>
+                    <span class="streak">You have completed <%= el.totaldays %> days in a row!</span>
+                    <%  } else { %>                
+                    <span class='addLike'><%= el.streak %></span>
+                    <span id="add" class='fa fa-plus-circle plusOne'></span>
+                    <% } %>
+                    <span id="delete" class='fa fa-trash del'><% i %></span>  
+
             </li>
     <% }) %>    
     </ul>
-
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
-
+    <article class="bar">
+        <span class="title">Add a new Habit</span>    
     <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>    
+        <input type="text" placeholder="Enter Goal" name='todoItem'>    
         <input type="text" placeholder="Motivation" name='motivation'>
+        <input type="number" placeholder="# of days" name='totalDays'>
         <input type="date" placeholder="Start Date" name='startDate'>
-        <input type="submit">
-    </form>
-
-    <a href="/logout">Logout</a>
-
+        <input type="submit" class="btn">
+    </form>    
+</article>
     <script src="js/main.js"></script>
 </body>
 </html>

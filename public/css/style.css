@@ -1,44 +1,87 @@
-/* h1{
-    color: red;
-}
-.completed{
-    text-decoration: line-through;
-    color: gray;
-}
-.not{
-    text-decoration: underline;
-} */
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@600&display=swap');
+/* 
+--mustard: #ffdc5cff;
+--linen: #f3e8ddff;
+--space-cadet: #2b3a67ff;
+--united-nations-blue: #518fe1ff;
+--medium-spring-green: #42e697ff;
+
+
+--mustard: hsla(47, 100%, 68%, 1);
+--linen: hsla(30, 48%, 91%, 1);
+--space-cadet: hsla(225, 41%, 29%, 1);
+--united-nations-blue: hsla(214, 71%, 60%, 1);
+--medium-spring-green: hsla(151, 77%, 58%, 1);
+
+
+$gradient-top: linear-gradient(0deg, #ffdc5cff, #f3e8ddff, #2b3a67ff, #518fe1ff, #42e697ff);
+$gradient-right: linear-gradient(90deg, #ffdc5cff, #f3e8ddff, #2b3a67ff, #518fe1ff, #42e697ff);
+$gradient-bottom: linear-gradient(180deg, #ffdc5cff, #f3e8ddff, #2b3a67ff, #518fe1ff, #42e697ff);
+$gradient-left: linear-gradient(270deg, #ffdc5cff, #f3e8ddff, #2b3a67ff, #518fe1ff, #42e697ff);
+$gradient-top-right: linear-gradient(45deg, #ffdc5cff, #f3e8ddff, #2b3a67ff, #518fe1ff, #42e697ff);
+$gradient-bottom-right: linear-gradient(135deg, #ffdc5cff, #f3e8ddff, #2b3a67ff, #518fe1ff, #42e697ff);
+$gradient-top-left: linear-gradient(225deg, #ffdc5cff, #f3e8ddff, #2b3a67ff, #518fe1ff, #42e697ff);
+$gradient-bottom-left: linear-gradient(315deg, #ffdc5cff, #f3e8ddff, #2b3a67ff, #518fe1ff, #42e697ff);
+$gradient-radial: radial-gradient(#ffdc5cff, #DCE5F2, #2b3a67ff, #518fe1ff, #42e697ff); */
 
 .title{
     font-family: 'Montserrat', sans-serif;
     color: #fff;
-    font-size: 1.1rem;
-    text-shadow: rgba(0,0,0,0.6) 2px 2px 1px;
-
+    padding: 10px;
+    margin-left: 3%;
+    text-shadow: rgba(43, 58, 103, .6) 2px 2px 1px;
+}
+.titleBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #DCE5F2;
+    z-index:5;
+    background: linear-gradient(135deg, #2b3a67ff 46%, #518fe1ff 100%);    /* background: linear-gradient(90deg, #2b3a67ff 25%, #518fe1ff 60%, rgba(81, 143, 225, 0.103)); */
 }
 
+ul {
+    position: relative;
+    margin-top: 100px;
+    height: auto;
+    width: 100%;
+    overflow-y:auto;
+
+}
+form { 
+    padding: 2%;
+}
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5em;
     padding: 2%;
     color: #fff;
-    text-shadow: rgba(0,0,0,0.6) 2px 2px 2px;
-    background-color: rgb(98, 103, 100);
-    
+    text-shadow: 1px 1px 2px rgba(43, 58, 103, .6);
+    background-color: #DCE5F2;    
 }
 
 h1{
     font-family: 'Montserrat', sans-serif;
     color: #fff;
     font-size: 2.5rem;
-    text-shadow: rgba(0,0,0,0.4) 4px 4px 1px;
+    padding: 6px;
+    text-shadow: 0 3px 4px 0 rgba(43, 58, 103, .6);
 }
-
+.bar { 
+    position: relative; 
+    bottom: 0px;
+    margin-left: -30px; 
+    border-top: 1px solid #DCE5F2;
+    background: linear-gradient(135deg, #2b3a67ff 46%, #518fe1ff 100%);    /* background: linear-gradient(90deg, #2b3a67ff 25%, #518fe1ff 60%, rgba(81, 143, 225, 0.103)); */
+    width: 110%; 
+    height: auto; 
+    padding: 40px; 
+}
 .rapper {
     list-style: none;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 3px 4px 0 rgba(43, 58, 103, .6);
     transition: 0.3s;
     font-style: bold;
     color: #f2f2f2;
@@ -46,20 +89,22 @@ h1{
     border-radius: 16px;
     padding: 20px;
     margin: 10px;    
-    background: rgb(107,162,89);
-    background: linear-gradient(90deg, rgba(107,162,89,1) 0%, rgba(163,221,131,1) 86%, rgba(163,221,131,1) 100%);
+    background: linear-gradient(135deg, #2b3a67ff 46%, #518fe1ff 100%);    /* background: linear-gradient(90deg, #2b3a67ff 25%, #518fe1ff 60%, rgba(81, 143, 225, 0.103)); */
   }
   .rapper:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+    box-shadow: 0 3px 4px 3px rgba(43, 58, 103, .5);
     width: 80%;
   }
 .goal {
-    content: "GOAL: ";
+    display: block;
+    content: "";
     font-family: 'Roboto', sans-serif;
+    font-size: 1.7rem;
     line-height: 1.2;
     margin: 20px 0;
 }
-.goal::before{     content: "GOAL: ";
+.goal::before{     content: "";     color: #42E697;
+
 }
 .goal::after {
     content: "\a";
@@ -71,9 +116,22 @@ h1{
     line-height: 1.2;
     margin: 20px 0;
 }
-.motive::before{     content: "MOTIVE: ";
+.motive::before{     content: "MOTIVE: ";    color: #42E697;
+
 }
 .motive::after {
+    content: "\a";
+    white-space: pre;
+}
+.setDate {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+.setDate::before{     content: "STARTED: ";    color: #42E697;
+
+}
+.setDate::after {
     content: "\a";
     white-space: pre;
 }
@@ -84,26 +142,30 @@ h1{
     padding-bottom: 20px;
     margin: 10px 0;
 }
+.streak { color: #FFDC5C;}
 #add {
-    padding-left: 20px;    
+    padding-left: 20px; 
+    color: #42E697;
+   
 }
 #add:hover {
     /* color: #45a399; */
-    color: rgb(125, 131, 127);
+    color: #FFDC5C;
 }
 #delete {
+    color: #42E697;
     padding: 20px;
 }
 #delete:hover {
     /* color: #45a399; */
-    color: rgb(125, 131, 127);
+    color: #FFDC5C;
 }
 input {
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     border-radius: 8px;
     border: none;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 3px 4px 0 rgba(43, 58, 103, .6);
     padding: 10px;
     margin: 10px 0;
 }
@@ -112,17 +174,28 @@ input {
     font-size: 22px;
     border-radius: 8px;
     border: none;
-    color: #f2f2f2;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+    color: #2B3A67;
+    box-shadow: 0 3px 4px 0 rgba(43, 58, 103, .6);
     padding: 10px;
-    margin: 10px 0;
-    background: rgb(107,162,89);
-    /* background: linear-gradient(90deg, rgba(107,162,89,1) 0%, rgba(163,221,131,1) 86%, rgba(163,221,131,1) 100%); */
+    margin: 10px 0;    
+    background: #42E697;
 
 }
 .btn:hover {
-    /* background: rgb(107,162,89); */
-    background: linear-gradient(90deg, rgba(107,162,89,1) 0%, rgba(163,221,131,1) 86%, rgba(163,221,131,1) 100%);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+    background: #FFDC5C;
+    box-shadow: 0 3px 4px 4px rgba(43, 58, 103, .6);
+}
+.link {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    color: #42E697;
+    text-decoration: none;
+    font-size: 1.0rem;
+}
+.link:hover {
+    color: #FFDC5C;
+    text-decoration: none;
+    font-size: 1.0rem;
 }
 

@@ -10,6 +10,11 @@ const TodoSchema = new mongoose.Schema({
     required: true,
     default: 'No motivation provided'
   },
+  totaldays: {
+    type: Number,
+    required: true,
+    default: 7
+  },
   startdate: {
     type: Date,
     required: true,
