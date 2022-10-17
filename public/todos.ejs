@@ -13,7 +13,7 @@
 <body>
     <span class="titleBar">
     <% if (left <= 1 ){ %>
-        <h3 class="title"><%= user.userName %> is tracking <%= left %> habit</h3>    
+        <h3 class="title"></h3>    
         <%  } else { %> 
         <h3 class="title"><%= user.userName %> is tracking <%= left %> habits</h3>
         <% } %>
@@ -43,8 +43,8 @@
     <form action="/todos/createTodo" method='POST'>
         <input type="text" placeholder="Enter Goal" name='todoItem'>    
         <input type="text" placeholder="Motivation" name='motivation'>
-        <input type="number" placeholder="# of days" name='totalDays'>
-        <input type="date" placeholder="Start Date" name='startDate'>
+        <input type="number" placeholder="# of days" name='totalDays'><br>
+        start date: <input type="date" placeholder="Start Date" name='startDate'>
         <input type="submit" class="btn">
     </form>    
 </article>

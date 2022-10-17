@@ -28,7 +28,8 @@ $gradient-radial: radial-gradient(#ffdc5cff, #DCE5F2, #2b3a67ff, #518fe1ff, #42e
     font-family: 'Montserrat', sans-serif;
     color: #fff;
     padding: 10px;
-    margin-left: 3%;
+    margin-left: 2%;
+    margin-top: 20px; 
     text-shadow: rgba(43, 58, 103, .6) 2px 2px 1px;
 }
 .titleBar{
@@ -36,19 +37,23 @@ $gradient-radial: radial-gradient(#ffdc5cff, #DCE5F2, #2b3a67ff, #518fe1ff, #42e
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: wrap-content;
     border-bottom: 1px solid #DCE5F2;
     z-index:5;
     background: linear-gradient(135deg, #2b3a67ff 46%, #518fe1ff 100%);    /* background: linear-gradient(90deg, #2b3a67ff 25%, #518fe1ff 60%, rgba(81, 143, 225, 0.103)); */
 }
-.dark { background: linear-gradient(135deg, #2b3a67ff 38%, #518fe1ff 100%); height:100vh}
-ul {
+.dark { 
+    background: radial-gradient(135deg, #2b3a67ff 38%, #518fe1ff 100%); 
+    height:100vh;
+    padding: 10%;
+}
+ol {
     position: relative;
-    margin-top: 100px;
+    margin-top: 75px;
+    margin-bottom: 310px;
     height: auto;
     width: 100%;
     overflow-y:auto;
-
 }
 form { 
     padding: 2%;
@@ -69,15 +74,34 @@ h1{
     padding: 6px;
     text-shadow: 0 3px 4px 0 rgba(43, 58, 103, .6);
 }
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 1.6rem;
+    padding: 6px;
+    text-shadow: 0 3px 4px 0 rgba(43, 58, 103, .6);
+}
+h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    width: 80%;
+    font-size: 1.4rem;
+    padding: 10px;
+    text-shadow: 0 3px 4px 0 rgba(43, 58, 103, .6);
+}
+
 .bar { 
-    position: relative; 
+    position: fixed; 
     bottom: 0px;
-    margin-left: -30px; 
     border-top: 1px solid #DCE5F2;
+    border-bottom-left-radius: 32px;
+    border-top-left-radius: 32px;
     background: linear-gradient(135deg, #2b3a67ff 46%, #518fe1ff 100%);    /* background: linear-gradient(90deg, #2b3a67ff 25%, #518fe1ff 60%, rgba(81, 143, 225, 0.103)); */
     width: 110%; 
     height: auto; 
-    padding: 40px; 
+    padding: 20px; 
 }
 .rapper {
     list-style: none;
@@ -176,8 +200,8 @@ input {
     border: none;
     color: #2B3A67;
     box-shadow: 0 3px 4px 0 rgba(43, 58, 103, .6);
-    padding: 10px;
-    margin: 10px 0;    
+    padding: 15px 25px;
+    margin: 10px;    
     background: #42E697;
     text-decoration: none;
 
@@ -202,4 +226,12 @@ input {
     text-decoration: none;
     font-size: 1.0rem;
 }
-
+@media screen and (max-width: 830px) {
+   .todoItem {
+      font-size: 75%;
+    }
+    .goal {
+        font-size: 1.3rem;
+      }
+   
+  }

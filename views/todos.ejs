@@ -12,14 +12,17 @@
 </head>
 <body>
     <span class="titleBar">
-    <% if (left <= 1 ){ %>
-        <h3 class="title"><%= user.userName %> is tracking <%= left %> habit</h3>    
-        <%  } else { %> 
-        <h3 class="title"><%= user.userName %> is tracking <%= left %> habits</h3>
-        <% } %>
-        <a href="/logout" class="link">Logout</a>
+        <% if (left === 0 ){ %>
+            <h3 class="title">Daily Habit Tracker</h3>
+            <h4 class="title">Start making positive changes in your life by tracking habits 🏆<br>Set a number of days 📅 and keep track of your daily streak 🔥<br>Hold yourself accountable, consistency is key! 🗝️</h4>    
+            <%  } else if (left === 1 ){ %> 
+            <h3 class="title"><%= user.userName %> is tracking <%= left %> habit</h3>
+            <%  } else { %> 
+            <h3 class="title"><%= user.userName %> is tracking <%= left %> habits</h3>
+            <% } %>
+            <a href="/logout" class="link">Logout</a>
     </span>
-    <ul>
+    <ol>
         <% var i = 0 %>
     <% todos.forEach( el => { %>
         <% i += 1 %>
@@ -37,14 +40,15 @@
 
             </li>
     <% }) %>    
-    </ul>
+    </ol>
     <article class="bar">
+        <br>
         <span class="title">Add a new Habit</span>    
     <form action="/todos/createTodo" method='POST'>
         <input type="text" placeholder="Enter Goal" name='todoItem'>    
         <input type="text" placeholder="Motivation" name='motivation'>
-        <input type="number" placeholder="# of days" name='totalDays'>
-        <input type="date" placeholder="Start Date" name='startDate'>
+        <input type="number" placeholder="# of days" name='totalDays'><br>
+        <!-- start date: <input type="date" placeholder="Start Date" name='startDate'> -->
         <input type="submit" class="btn">
     </form>    
 </article>
