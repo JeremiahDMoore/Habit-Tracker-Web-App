@@ -22,10 +22,13 @@ bcrypt connect-mongo dotenv ejs express express-flash express-session mongodb mo
 
 ---
 
-## Install all the dependencies or node packages used for development via Terminal
+## Install all the dependencies used for development via Terminal, start the server and run the app
 
-`npm install` 
+```
+npm install
+npm start
 
+```
 ---
 
 ### Things to add
