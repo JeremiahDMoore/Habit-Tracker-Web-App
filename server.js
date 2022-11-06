@@ -12,12 +12,10 @@ const todoRoutes = require('./routes/todos')
 // use .ENV file for environment variables
 require('dotenv').config({path: './config/.env'})
 //new stuff
-const { MongoClient } = require('mongodb');
-const uri = process.env.DB_STRING;
-const client = new MongoClient(uri);
+// const { MongoClient } = require('mongodb');
+// const uri = process.env.DB_STRING;
+// const client = new MongoClient(uri);
 //
-
-
 // Passport config
 require('./config/passport')(passport)
 // Connect to MongoDB
@@ -51,27 +49,26 @@ app.use('/', mainRoutes)
 app.use('/todos', todoRoutes)
 
 // OG code
-// app.listen(process.env.PORT, ()=>{
-//     console.log('Server is running on 2122, you better catch it!')
-// })
+app.listen(process.env.PORT, ()=>{
+    console.log('Server is running on 2122, you better catch it!')
+})
 //new stuff
-const dbS = connectDB().then(() => {
+// const dbS = connectDB().then(() => {
 
 
-  client.connect(async err => {
-    //Connect To Database
-    // connectDB();
-    // if(!connect) {console.log('Mongoose ran away'); return false}
-    if(err){ console.error(err); return false;}
-    // connection to mongo is successful, listen for requests
-    app.listen(process.env.PORT, () => {
-      console.log("listening for requests");
-    })
-  });
-  // connectDB(app)
-  //
+//   client.connect(async err => {
+//     //Connect To Database
+//     // connectDB();
+//     // if(!connect) {console.log('Mongoose ran away'); return false}
+//     if(err){ console.error(err); return false;}
+//     // connection to mongo is successful, listen for requests
+//     app.listen(process.env.PORT, () => {
+//       console.log("listening for requests");
+//     })
+//   });
+  connectDB(app)
   
-  })
+
 
 
 
