@@ -1,6 +1,6 @@
 # Habit Tracker Web App
 
-A Simple Habit Tracker Web App built with Node, Express and MongoDB. Designed to be simple and easy to use for everyday engagements. Consistency is key to building habits!      
+A Simple Habit Tracker Web App built with Node, Express and MongoDB. HTML Templating with EJS. Designed to be simple and easy to use for everyday engagements. Consistency is key to building habits!      
 
 This app was created as part of a 100 hours MVP project. 100 hours are given to complete an MVP of a concept and then design and build the application.
 ## Objectives
