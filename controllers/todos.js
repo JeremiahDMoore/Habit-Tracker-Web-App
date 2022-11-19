@@ -25,7 +25,7 @@ module.exports = {
                 await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
                     $inc: {streak: 1},
                 })
-               
+                res.redirect(`/todos`);   
             }catch(err){
                 console.log(err)
             }
