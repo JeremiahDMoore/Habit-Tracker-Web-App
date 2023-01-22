@@ -20,11 +20,12 @@ module.exports = {
             console.log(err)
         }
     },
-    markComplete: async (req, res)=>{       
+    markComplete: async (req, res)=>{  
             try{
                 await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
                     $inc: {streak: 1},
                 })
+                              
                 res.redirect(`/todos`);   
             }catch(err){
                 console.log(err)
